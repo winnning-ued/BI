@@ -1,13 +1,12 @@
 <template>
+  <div>
+    score
+  </div>
 
-<div>
-  <Score></Score>
-</div>
 
 </template>
 
 <script>
-  import Score from 'components/business/score/Score.vue'
     export default{
         props: [],
         data: function () {
@@ -15,18 +14,16 @@
         },
         created() {
 
-            console.log('CustomReports created.');
+            console.log('Score created.');
 
         },
         mounted() {
 
-            console.log('CustomReports mounted.');
+            console.log('Score mounted.');
 
         },
         methods: {},
-        components: {
-          Score
-        }
+        components: {}
     }
 </script>
 
