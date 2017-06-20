@@ -1,8 +1,5 @@
 <template>
 
-  <div class="tab">
-
-  </div>
 
 
 </template>
@@ -15,12 +12,12 @@
         },
         created() {
 
-            console.log('Tab created.');
+            console.log('BasicSettings created.');
 
         },
         mounted() {
 
-            console.log('Tab mounted.');
+            console.log('BasicSettings mounted.');
 
         },
         methods: {},
