@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/wued-logo.png" class="wued-logo">
     <router-view></router-view>
   </div>
 </template>

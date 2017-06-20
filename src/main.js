@@ -6,6 +6,9 @@ import router from './router'
 import store from './store'
 import 'wued-ui/lib/theme-default/index.css'
 import WuedUI from 'wued-ui'
+
+import 'assets/css/index.css'
+
 Vue.config.productionTip = false
 Vue.use(WuedUI)
 
