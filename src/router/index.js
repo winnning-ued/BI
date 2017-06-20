@@ -11,11 +11,15 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/medicalService',
-      redirect: MedicalService
+      path:'/',
+      redirect:'/customReports'
     },
     {
-      path: '/',
+      path: '/medicalService',
+      component: MedicalService
+    },
+    {
+      path: '/customReports',
       component: CustomReports
     },
     {
