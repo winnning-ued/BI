@@ -14,15 +14,15 @@
 
 <script>
   export default{
-      name: 'tag',
+    name: 'tag',
     props: {
       closable: {
-          type: Boolean,
-          required: false,
-          default: true
+        type: Boolean,
+        required: false,
+        default: true
       },
       iconClass: {
-          type: String,
+        type: String,
         required: false,
         default: 'el-icon-close'
       }
@@ -33,12 +33,12 @@
     methods: {
       clickIcon() {
 
-          this.$emit('clickedIcon');
+        this.$emit('clickedIcon');
 
       },
       click() {
 
-          this.$emit('clicked');
+        this.$emit('clicked');
 
       }
     },
@@ -57,10 +57,11 @@
     border: 1px solid #F3F3F3;
     border-radius: 3px;
     margin: 0 2px;
-    cursor:pointer;
+    cursor: pointer;
   }
+
   i {
-   font-size: 12px;
+    font-size: 12px;
     margin-left: 10px;
     color: #999999;
   }

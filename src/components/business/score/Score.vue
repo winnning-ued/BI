@@ -86,10 +86,10 @@
 <style scoped>
 
   .score {
-    width: 85%;
+    width: 100%;
     height: 460px;
     border-radius: 4px;
-    margin: 50px auto 0;
+    /*margin: 50px auto 0;*/
     padding: 20px 10px 5px;
     background-color: #fff;
     border-top: 3px solid #c7d5e2;

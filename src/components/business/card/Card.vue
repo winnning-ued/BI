@@ -1,13 +1,12 @@
 <template>
 
 <div>
-  <Score></Score>
+  card
 </div>
 
 </template>
 
 <script>
-  import Score from 'components/business/score/Score.vue'
     export default{
         props: [],
         data: function () {
@@ -23,7 +22,6 @@
         },
         methods: {},
         components: {
-          Score
         }
     }
 </script>
