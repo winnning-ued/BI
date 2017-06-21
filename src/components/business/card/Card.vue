@@ -1,6 +1,6 @@
 <template>
 
-<div class="customreports">
+<div>
   <Score></Score>
 </div>
 
@@ -15,12 +15,10 @@
         },
         created() {
 
-            console.log('CustomReports created.');
 
         },
         mounted() {
 
-            console.log('CustomReports mounted.');
 
         },
         methods: {},

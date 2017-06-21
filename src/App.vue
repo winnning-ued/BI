@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <Tab></Tab>
+    <ued-nav></ued-nav>
+    <Tag></Tag>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import Tab from 'business/tab/Tab.vue'
+  import UedNav from 'business/nav/Nav.vue'
+  import Tag from 'business/tag/Tag.vue'
   export default {
     name: 'app',
     components: {
-      Tab
+      UedNav,
+      Tag
     }
   }
 </script>
@@ -20,7 +23,6 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
   }
 </style>
