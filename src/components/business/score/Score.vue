@@ -5,7 +5,6 @@
       <div class="multipgrade w-100 clear">
         <div class="userbox floatL">
           <div class="userimgbox"></div>
-          <div class="greet">Hi!<span>白求恩</span>，欢迎登录</div>
         </div>
         <div class="scorebox floatR">
           <div class="clear">
@@ -18,22 +17,22 @@
               </div>
             </div>
           </div>
-          <div class="hint">以上为本季度全院综合评分</div>
         </div>
       </div>
-      <div class="scoretitle">综合概述</div>
-      <div class="multipsummary w-100">
-        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+      <div class="barchart">
+        <div id="barchart" :style="{width: '320px', height: '125px'}"></div>
       </div>
-
     </div>
-    <div class="scoreright floatR">
+    <div class="scoremiddle floatL">
       <div class="scoretitle">综合分析</div>
       <div class="multipanalyse w-100">
         <div class="radarchart">
-          <div id="mycharts" :style="{width: '370px', height: '370px'}"></div>
+          <div id="mycharts" :style="{width: '255px', height: '255px'}"></div>
         </div>
       </div>
+    </div>
+    <div class="scoreright floatR">
+      <div class=""></div>
     </div>
   </div>
 
@@ -52,7 +51,7 @@
 
         },
         mounted() {
-
+          /*雷达图*/
           let myChart = echarts.init(document.getElementById('mycharts'));
           let option = {
             radar: {
@@ -112,6 +111,46 @@
           };
           myChart.setOption(option);
 
+          /*柱状图*/
+          let barChart = echarts.init(document.getElementById('barchart'));
+          let baroption = {
+            color: ['#00d1bd'],
+            tooltip : {
+              trigger: 'axis',
+              axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+              }
+            },
+            grid: {
+              top: '4%',
+              left: '1%',
+              right: '2%',
+              bottom: '1%',
+              containLabel: true
+            },
+            xAxis: {
+                type : 'category',
+                data : ['一月', '二月', '三月', '四月', '五月', '六月'],
+                axisTick: {
+                  show: false
+                },
+              },
+            yAxis : {
+                type : 'value',
+                axisTick: {
+                  show: false
+                }
+              },
+            series : [
+              {
+                name:'评分',
+                type:'bar',
+                barWidth: '60%',
+                data:[94, 93, 85, 88, 80, 90]
+              }
+            ]
+          };
+          barChart.setOption(baroption);
         },
         methods: {},
         components: {}
@@ -122,10 +161,10 @@
 
   .score {
     width: 100%;
-    height: 460px;
+    height: 270px;
     border-radius: 4px;
     /*margin: 50px auto 0;*/
-    padding: 20px 10px 5px;
+    padding: 0 10px 5px;
     background-color: #fff;
     border-top: 3px solid #c7d5e2;
   }
@@ -136,107 +175,100 @@
     font-size: 15px;
     text-align: left;
     padding-left: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
 /*左边部分*/
   .scoreleft {
-    width: 58%;
-    height: 420px;
+    width: 33%;
+    height: 267px;
+    padding-top: 10px;
   }
 
   .userbox {
-    width: 25%;
-    height: 220px;
+    width: 27%;
+    height: 85px;
   }
 
   .userimgbox {
     width: 100%;
-    height: 160px;
+    height: 85px;
     border-radius: 5px;
     background-color: #6584ad;
     background: url("../../../assets/img/user1.png") no-repeat center center;
-  }
-
-  .greet {
-    color: #333;
-  }
-
-  .hint {
-    color: #999;
-  }
-
-  .greet,
-  .hint {
-    font-size: 14px;
-    text-align: left;
-    padding-left: 5px;
-    margin-top: 15px;
+    background-size: 100% 85px;
   }
 
   .scorebox {
-    width: 74%;
-    height: 220px;
+    width: 72%;
+    height: 60px;
   }
 
   .star {
     width: 35%;
-    height: 160px;
+    height: 85px;
     border-radius: 5px 0 0 5px;
     background-color: #1e90ff;
   }
 
   .starimg {
-    width: 56px;
-    height: 53px;
-    margin: 53px auto 0;
-    background: url("../../../assets/img/star.png");
+    width: 30px;
+    height: 30px;
+    margin: 26px auto 0;
+    background: url("../../../assets/img/star.png") no-repeat center center;
+    background-size: 30px 30px;
   }
 
   .fractionbox {
     width: 65%;
-    height: 160px;
+    height: 85px;
     border-radius: 0 5px 5px 0;
     background-color: #56acff;
   }
 
   .fraction {
     color: #fff;
-    font-size: 70px;
-    margin: 45px auto;
+    font-size: 46px;
+    margin: 20px auto;
     text-align: center;
   }
 
   .fraction span {
-    font-size: 20px;
-    margin-left: 10px;
+    font-size: 18px;
+    margin-left: 5px;
     display: inline-block;
   }
 
-  .multipsummary {
-    color: #999;
-    font-size: 14px;
-    text-align: left;
+  .barchart {
+    margin-top: 10px;
   }
-/*右边部分*/
+
+  /*中间部分*/
+  .scoremiddle {
+    width: 33%;
+    height: 267px;
+    padding-top: 10px;
+    margin-left: 6px;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+  }
+
+  /*右边部分*/
   .scoreright {
-    width: 42%;
-    height: 420px;
-    padding: 0 10px;
+    width: 33%;
+    height: 267px;
+    padding-top: 10px;
   }
 
-  .scoreright .scoretitle {
-    padding-left: 25px;
-  }
-
-  .multipanalyse {
-    border-left: 2px solid #e7e7e7;
+  .scoremiddle .scoretitle {
+    padding-left: 15px;
+    margin-bottom: 0;
   }
 
 /*雷达图表*/
   .radarchart {
-    width: 370px;
-    height: 370px;
-    margin: 0 auto;
+    width: 255px;
+    height: 255px;
+    margin: -14px auto 0;
   }
 
 </style>
