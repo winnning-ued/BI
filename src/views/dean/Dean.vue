@@ -1,12 +1,17 @@
 <template>
 
-  <div class="custom-content">
+  <div class="custom-content clearfix">
     <div class="switchbox clear">
       <timeswitch class="floatL"></timeswitch>
       <div class="back floatR">返回</div>
     </div>
     <score></score>
-    <card></card>
+    <card class="floatL margin-top-16"></card>
+    <card class="floatR margin-top-16"></card>
+    <card class="floatL margin-top-16"></card>
+    <card class="floatR margin-top-16"></card>
+    <card class="floatL margin-top-16"></card>
+    <card class="floatR margin-top-16"></card>
   </div>
 
 </template>

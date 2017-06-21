@@ -15,12 +15,12 @@ export default new Router({
       redirect:'/dean'
     },
     {
-      path: '/medicalService',
-      component: MedicalService
-    },
-    {
       path: '/dean',
       component: Dean
+    },
+    {
+      path: '/medicalService',
+      component: MedicalService
     },
     {
       path: '/dataAnalysis',
