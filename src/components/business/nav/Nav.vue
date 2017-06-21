@@ -12,7 +12,7 @@
       <div class="nav">
         <router-link tag="div"
                      class="tab-item "
-                     to="/medicalService"
+                     to="/dean"
                      active-class="active"
         >
           <span class="tab-link">医疗业务</span>

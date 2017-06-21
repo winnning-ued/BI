@@ -1,13 +1,13 @@
 <template>
 
   <div class="card">
-    <circle></circle>
+    <CircleProgress></CircleProgress>
   </div>
 
 </template>
 
 <script>
-  import circle from 'base/progress/CircleProgress.vue'
+  import CircleProgress from 'base/progress/CircleProgress.vue'
   export default{
     props: [],
     data: function () {
@@ -23,7 +23,7 @@
     },
     methods: {},
     components: {
-      circle
+      CircleProgress
     }
   }
 </script>
