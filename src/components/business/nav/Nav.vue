@@ -70,7 +70,7 @@
     width: 100%;
     height: 50px;
     line-height: 50px;
-    background: #1A85FF;
+    background: #47545D;
     font-size: 18px;
   }
   .header-content{
