@@ -5,7 +5,7 @@
       <div class="logo-content">
         <div class="logo floatL"></div>
         <div class="logo-titlt floatR">
-          <span>卫宁分析</span>
+          <h3>卫宁分析</h3>
           <span>Winning Analysis</span>
         </div>
       </div>
@@ -42,7 +42,7 @@
           <span class="tab-link">基础设置</span>
         </router-link>
       </div>
-      <div class="user">
+      <div class="user-content">
         <div class="switch floatL"></div>
         <div class="user floatR"></div>
       </div>
@@ -86,11 +86,11 @@
     overflow: hidden;
   }
   .logo-content{
-    width: 120px;
+    width: 150px;
     height: 50px;
     /*background: pink;*/
     float: left;
-    margin-right: 80px;
+    margin-right: 30px;
   }
   .logo{
     width: 50px;
@@ -99,24 +99,25 @@
     margin-top: 10px;
   }
   .logo-titlt{
-    width: 70px;
+    width: 100px;
     height: 50px;
-    background: pink;
+    line-height: 15px;
+    padding-top: 10px;
+    color: #F3F9FF;
   }
-  .logo-titlt:nth-child(1){
+  .logo-titlt h3{
     font-size: 18px;
   }
-  .logo-titlt:nth-child(2){
-    font-family: MicrosoftYaHei;
-    font-size: 9px;
+  .logo-titlt span{
+    font-size: 12px;
+    line-height: 28px;
   }
   .nav {
     float: left;
   }
-  .user{
+  .user-content{
     width: 100px;
     height: 50px;
-    background: pink;
     float: right;
   }
   .tab-item {
@@ -139,11 +140,15 @@
     width: 17px;
     height: 17px;
     background: url('../../../assets/img/switch.png') no-repeat;
+    margin-top: 16px;
+    margin-left: 10px;
   }
   .user{
     width: 37px;
     height: 37px;
     background: url('../../../assets/img/user.png') no-repeat;
+    margin-top: 6px;
+    margin-right: 10px;
   }
 
 
