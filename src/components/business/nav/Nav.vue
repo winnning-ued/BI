@@ -2,7 +2,12 @@
 
   <div class="header">
     <div class="header-content">
-      <div class="logo">
+      <div class="logo-content">
+        <div class="logo floatL"></div>
+        <div class="logo-titlt floatR">
+          <span>卫宁分析</span>
+          <span>Winning Analysis</span>
+        </div>
       </div>
       <div class="nav">
         <router-link tag="div"
@@ -38,6 +43,8 @@
         </router-link>
       </div>
       <div class="user">
+        <div class="switch floatL"></div>
+        <div class="user floatR"></div>
       </div>
     </div>
   </div>
@@ -78,12 +85,30 @@
     margin: 0 auto;
     overflow: hidden;
   }
-  .logo{
+  .logo-content{
     width: 120px;
     height: 50px;
-    background: pink;
+    /*background: pink;*/
     float: left;
     margin-right: 80px;
+  }
+  .logo{
+    width: 50px;
+    height: 50px;
+    background: url('../../../assets/img/logo.png')  no-repeat;
+    margin-top: 10px;
+  }
+  .logo-titlt{
+    width: 70px;
+    height: 50px;
+    background: pink;
+  }
+  .logo-titlt:nth-child(1){
+    font-size: 18px;
+  }
+  .logo-titlt:nth-child(2){
+    font-family: MicrosoftYaHei;
+    font-size: 9px;
   }
   .nav {
     float: left;
@@ -109,6 +134,16 @@
   .active {
     /*border-bottom: 2px solid palevioletpink;*/
     background: #5AAEFC;
+  }
+  .switch{
+    width: 17px;
+    height: 17px;
+    background: url('../../../assets/img/switch.png') no-repeat;
+  }
+  .user{
+    width: 37px;
+    height: 37px;
+    background: url('../../../assets/img/user.png') no-repeat;
   }
 
 
