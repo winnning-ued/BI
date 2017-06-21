@@ -9,7 +9,9 @@
         </div>
         <div class="scorebox floatR">
           <div class="clear">
-            <div class="star floatL"></div>
+            <div class="star floatL">
+              <div class="starimg"></div>
+            </div>
             <div class="fractionbox floatR">
               <div class="fraction">
                 80<span>分</span>
@@ -54,7 +56,30 @@
           let myChart = echarts.init(document.getElementById('mycharts'));
           let option = {
             radar: {
-              // shape: 'circle',
+              splitArea: {
+                areaStyle: {
+                  color: ['rgba(36, 127, 207, 1)',
+                    'rgba(103, 176, 241, 1)', 'rgba(148, 205, 255, 1)',
+                    'rgba(207, 232, 255, 1)', 'rgba(230, 238, 255, 1)'],
+                }
+              },
+              name: {
+                formatter:'{value}',
+                textStyle: {
+                  color:'#333'
+                }
+              },
+              nameGap: 8,
+              axisLine: {
+                lineStyle: {
+                  color: 'rgba(255, 255, 255, 0.8)'
+                }
+              },
+              splitLine: {
+                lineStyle: {
+                  color: 'rgba(255, 255, 255, 0.8)'
+                }
+              },
               indicator: [
                 { name: '收费', max: 6500},
                 { name: '药占比', max: 16000},
@@ -67,6 +92,16 @@
             series: [{
               name: '评分',
               type: 'radar',
+              lineStyle: {
+                  normal: {
+                      color: 'rgba(64, 93, 255, 1)'
+                  }
+              },
+              itemStyle: {
+                normal: {
+                  color: 'rgba(64, 93, 255, 1)'
+                }
+              },
               data : [
                 {
                   value : [4300, 10000, 28000, 35000, 50000, 19000],
@@ -107,7 +142,6 @@
   .scoreleft {
     width: 58%;
     height: 420px;
-    padding: 0 10px;
   }
 
   .userbox {
@@ -116,10 +150,11 @@
   }
 
   .userimgbox {
-    width: 155px;
+    width: 100%;
     height: 160px;
     border-radius: 5px;
     background-color: #6584ad;
+    background: url("../../../assets/img/user1.png") no-repeat center center;
   }
 
   .greet {
@@ -150,6 +185,13 @@
     background-color: #1e90ff;
   }
 
+  .starimg {
+    width: 56px;
+    height: 53px;
+    margin: 53px auto 0;
+    background: url("../../../assets/img/star.png");
+  }
+
   .fractionbox {
     width: 65%;
     height: 160px;
@@ -161,6 +203,7 @@
     color: #fff;
     font-size: 70px;
     margin: 45px auto;
+    text-align: center;
   }
 
   .fraction span {
