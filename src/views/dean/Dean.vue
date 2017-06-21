@@ -8,10 +8,6 @@
     <score></score>
     <card class="floatL margin-top-16"></card>
     <card class="floatR margin-top-16"></card>
-    <card class="floatL margin-top-16"></card>
-    <card class="floatR margin-top-16"></card>
-    <card class="floatL margin-top-16"></card>
-    <card class="floatR margin-top-16"></card>
   </div>
 
 </template>

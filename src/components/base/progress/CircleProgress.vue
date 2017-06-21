@@ -1,6 +1,6 @@
 <template>
 
-<div class="circle">aefsaklasdfa</div>
+<div class="circle"></div>
 
 </template>
 
