@@ -1,6 +1,6 @@
 <template>
 
-<div>
+<div class="customreports">
   <Score></Score>
 </div>
 
@@ -31,7 +31,11 @@
 </script>
 
 <style scoped>
-
+  .customreports {
+    overflow: hidden;
+    height: 1000px;
+    background-color: #eaedf1;
+  }
 
 
 </style>
