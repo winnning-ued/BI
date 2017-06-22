@@ -1,44 +1,40 @@
 <template>
 
-<div class="circle"></div>
+<div class="circle">
+    <div class="circlescore">
+      <Countup></Countup>
+      <span>分</span>
+    </div>
+    <div v-for="n in 50" class="avatar" ref="myCircle" :style="{transform:'rotate('+ (n-1)*7.2 +'deg)'}"></div>
+</div>
 
 </template>
 
 <script>
+  import Countup from 'base/countup/Countup.vue'
     export default{
         props: [],
         data: function () {
-            return {};
+          return {};
         },
         created() {
-
             console.log('CirclePrograss created.');
-
         },
         mounted() {
-
-          var cirquehtml = ''
-          for (let i =0; i < 50; i++) {
-            cirquehtml += '<div class="avatar" style="top: 5px;left: 50px;position: absolute;width: 2px;height: 6px;transform-origin: 50% 40px;background-color: #e1e1e1;transform:rotate('+ i*7.2 +'deg) scale(1.00,1.00) translate(0px,0px) skew(0deg,0deg);"></div>';
-          }
-
-          document.querySelectorAll('.circle')[0].innerHTML = cirquehtml;
-          document.querySelectorAll('.circle')[1].innerHTML = cirquehtml;
-          console.log(document.querySelectorAll('.circle')[3])
-          var cirque = document.querySelectorAll("div.avatar");
-          console.log(cirque)
-          var x = 0;
-          var time = setInterval(function(){
-            cirque[x].style.backgroundColor = 'red'
-            x++;
-            if(x == 80) {
-              window.clearInterval(time);
-            }
-          }, 20);
-
+          let i = 0,
+              circle = this.$refs.myCircle,
+              time2 = setInterval(function(){
+                circle[i].style.backgroundColor = 'red'
+                i++;
+                if(i == 45) {
+                  window.clearInterval(time2);
+                }
+              }, 20);
         },
         methods: {},
-        components: {}
+        components: {
+          Countup
+        }
     }
 </script>
 
@@ -51,13 +47,29 @@
 
   .avatar {
     top: 5px;
-    left: 160px;
+    left: 65px;
     width: 2px;
     height: 6px;
     position: absolute;
     transition: all 1s;
     background-color: #e1e1e1;
     -webkit-transform-origin: 50% 40px;
+  }
+
+  .circlescore {
+    top: 32px;
+    left: 47px;
+    position: absolute;
+  }
+
+  .circlescore span:first-child {
+    font-size: 24px;
+  }
+
+  .circlescore span:last-child {
+    font-size: 12px;
+    margin-left: -2px;
+    display: inline-block;
   }
 
 
