@@ -14,6 +14,7 @@
 
 <script>
   import {addClass} from 'assets/js/dom.js';
+  import betterScroll from 'better-scroll';
   export default{
     props: {
       loop: {
@@ -27,11 +28,21 @@
       interval: {
         type: Number,
         default: 4000
+      },
+      slideItemrWidth: {
+        type: Number,
+        default: 100,
+        required: true
+      },
+      slideItemrHeight: {
+        type: Number,
+        default: 100,
+        required: true
       }
     },
     data: function () {
       return {
-        sliderWidth: 50
+
       };
     },
     created() {
@@ -46,7 +57,8 @@
     },
     methods: {
       _setSliderWidth() {
-        let slideItemrWidth = this.sliderWidth;
+        let slideItemrWidth = this.slideItemrWidth;
+        let slideItemrHeight = this.slideItemrHeight;
         let sliderWidth = 0;
         let sliderGroupDom = this.$refs.sliderGroup.children;
         console.log(this.$refs.sliderGroup.children.length);
@@ -55,6 +67,7 @@
           let child = sliderGroupDom[i];
           addClass(child, 'slider-item');
           child.style.width = slideItemrWidth + 'px';
+          child.style.height = slideItemrHeight + 'px';
           sliderWidth += slideItemrWidth;
         }
         if (this.loop) {
@@ -63,7 +76,16 @@
         this.$refs.sliderGroup.style.width = sliderWidth + 'px';
       },
       _initSlider() {
-
+        this.slider = new betterScroll(this.$refs.slider, {
+          scrollX: true,
+          scrollY: false,
+          momentum: false,
+          snap: true,
+          snapLoop: this.loop,
+          snapThreshold: 0.3,
+          snapSpeed: 400,
+          click: true
+        })
       }
     },
     components: {}
@@ -74,6 +96,7 @@
 
   .slider {
     min-height: 1px;
+    overflow: hidden;
   }
 
   .slider-group {

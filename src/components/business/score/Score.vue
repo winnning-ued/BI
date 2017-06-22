@@ -32,9 +32,14 @@
       </div>
     </div>
     <div class="scoreright floatR">
-      <slider>
-        <template v-for="item in sliderData ">
-          <div>{{ item.title}}</div>
+      <slider :slideItemrWidth="320">
+        <template v-for="item in sliderData">
+          <div class="test1">
+1111
+          </div>
+          <div class="test2">
+
+          </div>
         </template>
       </slider>
     </div>
@@ -284,5 +289,10 @@
     height: 255px;
     margin: -14px auto 0;
   }
-
+  .test1{
+    background: pink;
+  }
+  .test2{
+    background: green;
+  }
 </style>
