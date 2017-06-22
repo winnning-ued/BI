@@ -1,32 +1,33 @@
 <template>
 
-<div class="circle"></div>
+  <div class="circle"></div>
 
 </template>
 
 <script>
-    export default{
-        props: [],
-        data: function () {
-            return {};
-        },
-        created() {
+  export default{
+    props: {
 
-            console.log('CirclePrograss created.');
+    },
+    data: function () {
+      return {};
+    },
+    created() {
 
-        },
-        mounted() {
+      console.log('CirclePrograss created.');
 
-            console.log('CirclePrograss mounted.');
+    },
+    mounted() {
 
-        },
-        methods: {},
-        components: {}
-    }
+      console.log('CirclePrograss mounted.');
+
+    },
+    methods: {},
+    components: {}
+  }
 </script>
 
 <style scoped>
-
 
 
 </style>

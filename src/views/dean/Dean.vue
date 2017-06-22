@@ -6,8 +6,14 @@
       <div class="back floatR">返回</div>
     </div>
     <score></score>
-    <card class="floatL margin-top-16"></card>
-    <card class="floatR margin-top-16"></card>
+
+    <template v-for="(item, index) in data">
+      <card
+        :class="getClassList(index)"
+        :title="item.title"
+        :list="item.data"></card>
+    </template>
+
   </div>
 
 </template>
@@ -19,7 +25,68 @@
   export default{
     props: [],
     data: function () {
-      return {};
+      return {
+        data: [
+          {
+            title: '业务量',
+            data: [
+              {
+                name: '门诊收费总额',
+                value: 200000,
+                total: 400000,
+                trend: 'up'
+              },
+              {
+                name: '门诊收费总额',
+                value: 2000,
+                total: 400000,
+                trend: 'up'
+              },
+              {
+                name: '门诊收费总额',
+                value: '2000',
+                total: 400000,
+                trend: 'up'
+              },
+              {
+                name: '门诊收费总额',
+                value: '200',
+                total: 400000,
+                trend: 'up'
+              },
+            ],
+          },
+          {
+            title: ' 收入',
+            data: [
+              {
+                name: '门诊收费总额',
+                value: '200',
+                total: 400000,
+                trend: 'up'
+              },
+              {
+                name: '门诊收费总额',
+                value: '200',
+                total: 400000,
+                trend: 'up'
+              },
+              {
+                name: '门诊收费总额',
+                value: '200',
+                total: 400000,
+                trend: 'up'
+              },
+              {
+                name: '门诊收费总额',
+                value: '200',
+                total: 400000,
+                trend: 'up'
+              },
+            ],
+          }
+        ]
+      };
     },
     created() {
 
@@ -31,7 +98,17 @@
       console.log('CustomReports mounted.');
 
     },
-    methods: {},
+    methods: {
+        getClassList(index) {
+
+          let classList = [
+              'margin-top-16'
+          ];
+          classList.push(index % 2 === 0 ? 'floatL' : 'floatR');
+          return classList;
+
+        }
+    },
     components: {
       score,
       card,

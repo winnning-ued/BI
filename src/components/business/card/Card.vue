@@ -1,72 +1,28 @@
 <template>
 
   <div class="card">
-    <div class="title">业务量</div>
+    <div class="title" v-text="title"></div>
     <el-progress type="circle" :percentage="25"></el-progress>
-    <el-row>
-      <el-col :span="6">
-        <div class="grid-content">门诊收费总额</div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content">200万</div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content padding-top-10">
-          <el-progress :percentage="70"></el-progress>
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content">分析</div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="6">
-        <div class="grid-content">门诊收费总额</div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content">200万</div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content padding-top-10">
-          <el-progress :percentage="70"></el-progress>
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content">分析</div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="6">
-        <div class="grid-content">门诊收费总额</div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content">200万</div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content padding-top-10">
-          <el-progress :percentage="70"></el-progress>
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content">分析</div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="6">
-        <div class="grid-content">门诊收费总额</div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content">200万</div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content padding-top-10">
-          <el-progress :percentage="70"></el-progress>
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content">分析</div>
-      </el-col>
-    </el-row>
+    <template v-for="item in list">
+      <el-row>
+        <el-col :span="6">
+          <div class="grid-content">{{ item.name }}</div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content">{{ item.value | numericalToString }}</div>
+          <img src="../../../assets/img/up.png" alt="" v-if="item.trend==='up'">
+          <img src="../../../assets/img/down.png" alt="" v-if="item.trend==='down'">
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content padding-top-10">
+            <el-progress :percentage="getPercentage(item.value,item.total)"></el-progress>
+          </div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content">分析</div>
+        </el-col>
+      </el-row>
+    </template>
   </div>
 
 </template>
@@ -74,19 +30,24 @@
 <script>
   import CircleProgress from 'base/progress/CircleProgress.vue'
   export default{
-    props: [],
+    props: {
+      title: {
+        type: String,
+        required: true
+      },
+      list: {
+        type: Array,
+        required: true
+      }
+    },
     data: function () {
       return {};
     },
-    created() {
-
-
+    methods: {
+        getPercentage(value, total) {
+            return value / total * 100;
+        }
     },
-    mounted() {
-
-
-    },
-    methods: {},
     components: {
       CircleProgress
     }
