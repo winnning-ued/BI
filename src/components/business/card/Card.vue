@@ -2,7 +2,7 @@
 
   <div class="card">
     <div class="title" v-text="title"></div>
-    <el-progress type="circle" :percentage="25"></el-progress>
+    <CircleProgress></CircleProgress>
     <template v-for="item in list">
       <el-row>
         <el-col :span="6">
