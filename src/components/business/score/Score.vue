@@ -32,18 +32,30 @@
       </div>
     </div>
     <div class="scoreright floatR">
-      <div class=""></div>
+      <slider>
+        <template v-for="item in sliderData ">
+          <div>{{ item.title}}</div>
+        </template>
+      </slider>
     </div>
   </div>
 
 </template>
 
 <script>
+  import slider from 'base/slider/Slider.vue'
   import echarts from 'echarts'
     export default{
         props: [],
         data: function () {
-            return {};
+            return {
+                sliderData:[{
+                  title :"1"
+                },{
+                  title :"2"
+                }
+                ]
+            };
         },
         created() {
 
@@ -153,7 +165,9 @@
           barChart.setOption(baroption);
         },
         methods: {},
-        components: {}
+        components: {
+          slider
+        }
     }
 </script>
 
