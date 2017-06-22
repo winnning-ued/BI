@@ -9,9 +9,9 @@
           <div class="grid-content">{{ item.name }}</div>
         </el-col>
         <el-col :span="6">
-          <div class="grid-content">{{ item.value | numericalToString }}</div>
-          <img src="../../../assets/img/up.png" alt="" v-if="item.trend==='up'">
-          <img src="../../../assets/img/down.png" alt="" v-if="item.trend==='down'">
+          <div class="grid-content trendTitle">{{ item.value | numericalToString }}</div>
+          <img src="../../../assets/img/up.png" alt="" v-if="item.trend==='up'" class="trend">
+          <img src="../../../assets/img/down.png" alt="" v-if="item.trend==='down'" class="trend">
         </el-col>
         <el-col :span="6">
           <div class="grid-content padding-top-10">
@@ -71,10 +71,9 @@
   }
 
   .el-row {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
-  &
-  :last-child {
+  &  :last-child {
     margin-bottom: 0;
   }
 
@@ -106,6 +105,16 @@
   .row-bg {
     padding: 10px 0;
     background-color: #f9fafc;
+  }
+  .trend{
+    float: right;
+    margin-right: 40px;
+    margin-top: 14px;
+    width: 10px;
+  }
+  .trendTitle{
+    float: left;
+    margin-left: 30px;
   }
 </style>
 

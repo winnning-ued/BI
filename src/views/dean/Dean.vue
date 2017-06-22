@@ -40,7 +40,7 @@
                 name: '门诊收费总额',
                 value: 2000,
                 total: 400000,
-                trend: 'up'
+                trend: 'down'
               },
               {
                 name: '门诊收费总额',
@@ -52,7 +52,7 @@
                 name: '门诊收费总额',
                 value: '200',
                 total: 400000,
-                trend: 'up'
+                trend: 'down'
               },
             ],
           },
@@ -63,7 +63,7 @@
                 name: '门诊收费总额',
                 value: '200',
                 total: 400000,
-                trend: 'up'
+                trend: 'down'
               },
               {
                 name: '门诊收费总额',
@@ -75,7 +75,7 @@
                 name: '门诊收费总额',
                 value: '200',
                 total: 400000,
-                trend: 'up'
+                trend: 'down'
               },
               {
                 name: '门诊收费总额',
