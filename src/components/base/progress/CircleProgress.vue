@@ -2,7 +2,7 @@
 
 <div class="circle">
     <div class="circlescore">
-      <Countup></Countup>
+      <Countup :end="80" :duration="3" :options="{useEasing : true, useGrouping : true, separator : ',', decimal : '.', prefix : '', suffix : ''}"></Countup>
       <span>分</span>
     </div>
     <div v-for="n in 50" class="avatar" ref="myCircle" :style="{transform:'rotate('+ (n-1)*7.2 +'deg)'}"></div>
@@ -13,7 +13,16 @@
 <script>
   import Countup from 'base/countup/Countup.vue'
     export default{
-        props: [],
+        props: {
+          goal: {
+            type: Number,
+            default: 80
+          },
+          time: {
+            type: Number,
+            default: 3
+          }
+        },
         data: function () {
           return {};
         },
@@ -21,17 +30,21 @@
             console.log('CirclePrograss created.');
         },
         mounted() {
-          let i = 0,
+          this.initCircle(this.goal, this.time)
+        },
+        methods: {
+          initCircle (goal, duration) {
+            let i = 0,
               circle = this.$refs.myCircle,
               time = setInterval(function(){
                 circle[i].style.backgroundColor = '#57b1ff'
                 i++;
-                if(i == 45) {
+                if(i == (goal/2)) {
                   window.clearInterval(time);
                 }
-              }, 20);
+              }, (duration*1000)/goal);
+          }
         },
-        methods: {},
         components: {
           Countup
         }
@@ -46,14 +59,14 @@
   }
 
   .avatar {
-    top: 5px;
+    top: -5px;
     left: 65px;
-    width: 2px;
-    height: 6px;
+    width: 3px;
+    height: 9px;
     position: absolute;
     transition: all 1s;
     background-color: #e1e1e1;
-    -webkit-transform-origin: 50% 40px;
+    -webkit-transform-origin: 50% 50px;
   }
 
   .circlescore {

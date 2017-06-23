@@ -2,7 +2,7 @@
 
   <div class="card">
     <div class="title" v-text="title"></div>
-    <CircleProgress></CircleProgress>
+    <CircleProgress :goal="80" :time="3"></CircleProgress>
     <template v-for="item in list">
       <el-row>
         <el-col :span="6">

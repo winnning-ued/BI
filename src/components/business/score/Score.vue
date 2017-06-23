@@ -13,7 +13,7 @@
             </div>
             <div class="fractionbox floatR">
               <div class="fraction">
-                <Countup></Countup>
+                <Countup :end="85" :duration="3" :options="{useEasing : true, useGrouping : true, separator : ',', decimal : '.', prefix : '', suffix : ''}"></Countup>
                 <span>分</span>
               </div>
             </div>

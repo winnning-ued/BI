@@ -5,6 +5,27 @@
 <script>
   import CountUp from 'countup.js'
   export default {
+    props: {
+      start: {
+        type: Number,
+        default: 0
+      },
+      end: {
+        type: Number,
+        default: 100
+      },
+      decimal: {
+        type: Number,
+        default: 0
+      },
+      duration: {
+        type: Number,
+        default: 2.5
+      },
+      options: {
+        type: Object
+      }
+    },
     name: 'countup-demo',
     data () {
       return {
@@ -16,7 +37,14 @@
     },
     methods:{
       initCountUp(){
-        this.numAnim = new CountUp(this.$refs.countup,0, 80, 0, 3)
+        this.numAnim = new CountUp(
+          this.$refs.countup,
+          this.start,
+          this.end,
+          this.decimal,
+          this.duration,
+          this.options
+        );
         this.numAnim.start();
       }
     }
