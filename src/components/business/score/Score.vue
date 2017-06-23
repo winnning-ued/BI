@@ -13,7 +13,8 @@
             </div>
             <div class="fractionbox floatR">
               <div class="fraction">
-                80<span>分</span>
+                <Countup></Countup>
+                <span>分</span>
               </div>
             </div>
           </div>
@@ -48,8 +49,9 @@
 </template>
 
 <script>
-  import slider from 'base/slider/Slider.vue'
   import echarts from 'echarts'
+  import slider from 'base/slider/Slider.vue'
+  import Countup from 'base/countup/Countup.vue'
     export default{
         props: [],
         data: function () {
@@ -171,7 +173,8 @@
         },
         methods: {},
         components: {
-          slider
+          slider,
+          Countup
         }
     }
 </script>
@@ -246,14 +249,16 @@
 
   .fraction {
     color: #fff;
-    font-size: 46px;
     margin: 20px auto;
     text-align: center;
   }
 
-  .fraction span {
+  .fraction span:first-child {
+    font-size: 46px;
+  }
+
+  .fraction span:last-child {
     font-size: 18px;
-    margin-left: 5px;
     display: inline-block;
   }
 

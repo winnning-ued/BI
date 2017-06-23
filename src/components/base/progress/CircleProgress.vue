@@ -23,11 +23,11 @@
         mounted() {
           let i = 0,
               circle = this.$refs.myCircle,
-              time2 = setInterval(function(){
-                circle[i].style.backgroundColor = 'red'
+              time = setInterval(function(){
+                circle[i].style.backgroundColor = '#57b1ff'
                 i++;
                 if(i == 45) {
-                  window.clearInterval(time2);
+                  window.clearInterval(time);
                 }
               }, 20);
         },
