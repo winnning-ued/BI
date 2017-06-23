@@ -90,12 +90,10 @@
     },
     created() {
 
-      console.log('CustomReports created.');
 
     },
     mounted() {
 
-      console.log('CustomReports mounted.');
 
     },
     methods: {

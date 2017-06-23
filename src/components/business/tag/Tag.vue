@@ -46,12 +46,10 @@
     },
     created() {
 
-      console.log('Tag created.');
 
     },
     mounted() {
 
-      console.log('Tag mounted.');
 
     },
     methods: {

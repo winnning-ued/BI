@@ -27,7 +27,6 @@
           return {};
         },
         created() {
-            console.log('CirclePrograss created.');
         },
         mounted() {
           this.initCircle(this.goal, this.time)

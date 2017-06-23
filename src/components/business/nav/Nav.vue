@@ -59,12 +59,10 @@
     },
     created() {
 
-      console.log('Tab created.');
 
     },
     mounted() {
 
-      console.log('Tab mounted.');
 
     },
     methods: {},

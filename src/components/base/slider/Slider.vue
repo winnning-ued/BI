@@ -5,7 +5,8 @@
       <slot></slot>
     </div>
     <div class="dots">
-      <span class="dot" v-for="(item,index) in dots" :class="{active:currentPageIndex===index}"></span>
+      <span class="dot" v-for="(item,index) in dots" :class="{active:currentPageIndex===index}"
+            @click="clickDot(index)"></span>
     </div>
   </div>
 
@@ -47,7 +48,6 @@
       };
     },
     created() {
-      console.log('slide created.');
     },
     mounted() {
       setTimeout(() => {
@@ -64,11 +64,10 @@
       _setSliderWidth() {
         let slideItemrWidth = this.slideItemrWidth;
         let slideItemrHeight = this.slideItemrHeight;
-        let sliderWidth = 0;
+        let sliderWidth = 0;           //sliderGroup的宽度
         this.$refs.slider.style.width = `${slideItemrWidth}px`;
         this.$refs.slider.style.height = `${slideItemrHeight}px`;
         this.sliderGroupDom = this.$refs.sliderGroup.children;
-        console.log(this.sliderGroupDom.length);
         for (let i = 0; i < this.sliderGroupDom.length; i++) {
           let child = this.sliderGroupDom[i];
           addClass(child, 'slider-item');
@@ -117,6 +116,10 @@
           clearTimeout(this.timer);
           this._play()
         }
+      },
+      clickDot(index){
+        console.log(index);
+        this.currentPageIndex = index
       }
     },
     components: {}
