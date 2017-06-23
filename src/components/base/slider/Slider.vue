@@ -5,7 +5,7 @@
       <slot></slot>
     </div>
     <div class="dots">
-
+      <span class="dot" v-for="(item,index) in dots" :class="{active:currentPageIndex===index}"></span>
     </div>
   </div>
 
@@ -18,11 +18,11 @@
   export default{
     props: {
       loop: {
-        type: true,
+        type: Boolean,
         default: true
       },
       autoPlay: {
-        type: true,
+        type: Boolean,
         default: true
       },
       interval: {
@@ -42,7 +42,8 @@
     },
     data: function () {
       return {
-
+        dots: [],
+        currentPageIndex: 0
       };
     },
     created() {
@@ -51,7 +52,11 @@
     mounted() {
       setTimeout(() => {
         this._setSliderWidth();
+        this._initdots();
         this._initSlider();
+        if (this.autoPlay) {
+          this._play()
+        }
       }, 20)
 
     },
@@ -60,11 +65,12 @@
         let slideItemrWidth = this.slideItemrWidth;
         let slideItemrHeight = this.slideItemrHeight;
         let sliderWidth = 0;
-        let sliderGroupDom = this.$refs.sliderGroup.children;
-        console.log(this.$refs.sliderGroup.children.length);
-        for (let i = 0; i < sliderGroupDom.length; i++) {
-          console.log(sliderGroupDom[i], 'askdha');
-          let child = sliderGroupDom[i];
+        this.$refs.slider.style.width = `${slideItemrWidth}px`;
+        this.$refs.slider.style.height = `${slideItemrHeight}px`;
+        this.sliderGroupDom = this.$refs.sliderGroup.children;
+        console.log(this.sliderGroupDom.length);
+        for (let i = 0; i < this.sliderGroupDom.length; i++) {
+          let child = this.sliderGroupDom[i];
           addClass(child, 'slider-item');
           child.style.width = slideItemrWidth + 'px';
           child.style.height = slideItemrHeight + 'px';
@@ -86,6 +92,31 @@
           snapSpeed: 400,
           click: true
         })
+        this.slider.on('scrollEnd', this.resetPlay);
+        this.slider.on('touchend', this.resetPlay);
+      },
+      _initdots(){
+        this.dots = new Array(this.sliderGroupDom.length)
+      },
+      _play(){
+        let pageIndex = this.currentPageIndex + 1;
+        if (this.loop) {
+          pageIndex += 1;
+        }
+        this.timer = setTimeout(() => {
+          this.slider.goToPage(pageIndex, 0, 400)
+        }, this.interval)
+      },
+      resetPlay() {
+        let pageIndex = this.slider.getCurrentPage().pageX;
+        if (this.loop) {
+          pageIndex -= 1;
+        }
+        this.currentPageIndex = pageIndex;
+        if (this.autoPlay) {
+          clearTimeout(this.timer);
+          this._play()
+        }
       }
     },
     components: {}
@@ -97,6 +128,7 @@
   .slider {
     min-height: 1px;
     overflow: hidden;
+    position: relative;
   }
 
   .slider-group {
@@ -134,7 +166,15 @@
   }
 
   .dot {
+    width: 15px;
+    height: 2px;
+    background: #E6E6E6;
+    display: inline-block;
+    margin: 0 10px;
+  }
 
+  .active {
+    background: red;
   }
 
 </style>

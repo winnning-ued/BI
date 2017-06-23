@@ -33,14 +33,14 @@
       </div>
     </div>
     <div class="scoreright floatR">
-      <slider :slideItemrWidth="320">
+      <slider :slideItemrWidth="320"
+              :slideItemrHeight="250"
+              :autoPlay="true"
+              :interval="1000"
+              :loop="true"
+      >
         <template v-for="item in sliderData">
-          <div class="test1">
-1111
-          </div>
-          <div class="test2">
-
-          </div>
+          <div class="test1">{{ item.title }}</div>
         </template>
       </slider>
     </div>
