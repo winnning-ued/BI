@@ -118,7 +118,7 @@
 <style scoped>
 
   .custom-content {
-    width: 1024px;
+    width: 80%;
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;

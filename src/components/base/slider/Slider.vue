@@ -171,7 +171,7 @@
   .dot {
     width: 15px;
     height: 2px;
-    background: #E6E6E6;
+    background: #E0C1AA;
     display: inline-block;
     margin: 0 10px;
   }

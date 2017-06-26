@@ -1,21 +1,24 @@
 <template>
   <div class="score">
+    <div class="title">
+      <div class="width-33 text-align"><span class="title-green">综合评分</span></div>
+      <div class="width-33 text-align"><span class="title-blue">综合分析</span></div>
+      <div class="width-33 text-align"><span class="title-orange">异常指标预警</span></div>
+    </div>
     <div class="scoreleft floatL">
-      <div class="scoretitle">综合评分</div>
       <div class="multipgrade w-100 clear">
         <div class="userbox floatL">
           <div class="userimgbox"></div>
         </div>
-        <div class="scorebox floatR">
-          <div class="clear">
-            <div class="star floatL">
-              <div class="starimg"></div>
-            </div>
-            <div class="fractionbox floatR">
-              <div class="fraction">
-                <Countup :end="85" :duration="3" :options="{useEasing : true, useGrouping : true, separator : ',', decimal : '.', prefix : '', suffix : ''}"></Countup>
-                <span>分</span>
-              </div>
+        <div class="scorebox floatR clear">
+          <div class="star floatL">
+            <div class="starimg"></div>
+          </div>
+          <div class="fractionbox floatR">
+            <div class="fraction">
+              <Countup :end="85" :duration="3"
+                       :options="{useEasing : true, useGrouping : true, separator : ',', decimal : '.', prefix : '', suffix : ''}"></Countup>
+              <span>分</span>
             </div>
           </div>
         </div>
@@ -25,7 +28,6 @@
       </div>
     </div>
     <div class="scoremiddle floatL">
-      <div class="scoretitle">综合分析</div>
       <div class="multipanalyse w-100">
         <div class="radarchart">
           <div id="mycharts" :style="{width: '255px', height: '255px'}"></div>
@@ -33,15 +35,146 @@
       </div>
     </div>
     <div class="scoreright floatR">
-      <slider :slideItemrWidth="320"
-              :slideItemrHeight="250"
+      <slider :slideItemrWidth="400"
+              :slideItemrHeight="270"
               :autoPlay="true"
-              :interval="2000"
+              :interval="4000"
               :loop="true"
       >
-        <template v-for="item in sliderData">
-          <div class="test1">{{ item.title }}</div>
-        </template>
+        <div class="test1">
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <div class="grid-content ">指标名称</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content ">实际值</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content ">同比下降</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content ">目标值</div>
+            </el-col>
+          </el-row>
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <div class="grid-content ">门诊人数</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+          </el-row>
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <div class="grid-content ">急诊人数</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+          </el-row>
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <div class="grid-content ">住院人数</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+          </el-row>
+        </div>
+        <div class="test1">
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <div class="grid-content ">指标名称</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content ">实际值</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content ">同比下降</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content ">目标值</div>
+            </el-col>
+          </el-row>
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <div class="grid-content ">门诊人数</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+          </el-row>
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <div class="grid-content ">急诊人数</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+          </el-row>
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <div class="grid-content ">住院人数</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt=""  class="trend">
+            </el-col>
+          </el-row>
+        </div>
       </slider>
     </div>
   </div>
@@ -56,13 +189,52 @@
     props: [],
     data: function () {
       return {
-        sliderData: [{
-          title: 1
-        }, {
-          title: 2
-        }, {
-          title: 3
-        }
+        sliderData: [
+          {
+              data:[{
+                name: '门诊收费总额',
+                value: 200000,
+                total: 400000,
+                trend: 'up'
+              },{
+                name: '门诊收费总额',
+                value: 200000,
+                total: 400000,
+                trend: 'up'
+              },{
+                name: '门诊收费总额',
+                value: 200000,
+                total: 400000,
+                trend: 'up'
+              },{
+                name: '门诊收费总额',
+                value: 200000,
+                total: 400000,
+                trend: 'up'
+              }]
+          },{
+            data:[{
+              name: '门诊收费总额',
+              value: 200000,
+              total: 400000,
+              trend: 'up'
+            },{
+              name: '门诊收费总额',
+              value: 200000,
+              total: 400000,
+              trend: 'up'
+            },{
+              name: '门诊收费总额',
+              value: 200000,
+              total: 400000,
+              trend: 'up'
+            },{
+              name: '门诊收费总额',
+              value: 200000,
+              total: 400000,
+              trend: 'up'
+            }]
+          }
         ]
       }
     },
@@ -181,15 +353,35 @@
 </script>
 
 <style scoped>
+  .title {
+    height: 40px;
+    padding-top: 20px;
+    border-bottom: 2px solid #EFEFEF;
+  }
+
+  .title-green {
+    color: #47C8AB;
+    border-bottom: 2px solid #47C8AB;
+    font-size: 14px;
+  }
+
+  .title-blue {
+    color: #90B8DD;
+    border-bottom: 2px solid #90B8DD;
+    font-size: 14px;
+  }
+
+  .title-orange {
+    color: #E0C1AA;
+    border-bottom: 2px solid #E0C1AA;
+    font-size: 14px;
+  }
 
   .score {
     width: 100%;
-    height: 270px;
     border-radius: 4px;
-    /*margin: 50px auto 0;*/
-    padding: 0 10px 5px;
     background-color: #fff;
-    border-top: 3px solid #c7d5e2;
+    overflow: hidden;
   }
 
   .scoretitle {
@@ -205,7 +397,8 @@
   .scoreleft {
     width: 33%;
     height: 267px;
-    padding-top: 10px;
+    margin: 20px 0;
+    padding: 0 20px;
   }
 
   .userbox {
@@ -214,9 +407,9 @@
   }
 
   .userimgbox {
-    width: 100%;
+    width: 85px;
     height: 85px;
-    border-radius: 5px;
+    border-radius: 50%;
     background-color: #6584ad;
     background: url("../../../assets/img/user1.png") no-repeat center center;
     background-size: 100% 85px;
@@ -231,14 +424,14 @@
     width: 35%;
     height: 85px;
     border-radius: 5px 0 0 5px;
-    background-color: #1e90ff;
+    /*background-color: #1e90ff;*/
   }
 
   .starimg {
     width: 30px;
     height: 30px;
     margin: 26px auto 0;
-    background: url("../../../assets/img/star.png") no-repeat center center;
+    background: url("../../../assets/img/up.png") no-repeat center center;
     background-size: 30px 30px;
   }
 
@@ -246,11 +439,11 @@
     width: 65%;
     height: 85px;
     border-radius: 0 5px 5px 0;
-    background-color: #56acff;
+    /*background-color: #56acff;*/
   }
 
   .fraction {
-    color: #fff;
+    color: #F6282E;
     margin: 20px auto;
     text-align: center;
   }
@@ -272,8 +465,7 @@
   .scoremiddle {
     width: 33%;
     height: 267px;
-    padding-top: 10px;
-    margin-left: 6px;
+    margin: 20px 0;
     border-left: 1px solid #e1e1e1;
     border-right: 1px solid #e1e1e1;
   }
@@ -282,7 +474,7 @@
   .scoreright {
     width: 33%;
     height: 267px;
-    padding-top: 10px;
+    margin: 20px 0;
   }
 
   .scoremiddle .scoretitle {
@@ -298,10 +490,46 @@
   }
 
   .test1 {
-    background: pink;
+    /*background: pink;*/
   }
 
-  .test2 {
-    background: green;
+  /*栅格布局*/
+  .el-row {
+    margin-bottom: 20px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px dashed #EDEDED;
+    font-size: 14px;
+    color: #666666;
+  }
+  .el-row:first-child{
+    margin-bottom: 30px;
+  }
+  .el-row:last-child{
+    margin-bottom: 0px;
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .-dark {
+    background: #99a9bf;
+  }
+  . {
+    background: #d3dce6;
+  }
+  .-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 20px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
+  .trendTitle{
+    float: left;
+    margin-left: 25px;
   }
 </style>

@@ -15,7 +15,7 @@
                      to="/dean"
                      active-class="active"
         >
-          <span class="tab-link">医疗业务</span>
+          <span class="tab-link">院长决策</span>
         </router-link>
 
         <router-link tag="div"
@@ -23,7 +23,7 @@
                      to="/customReports"
                      active-class="active"
         >
-          <span class="tab-link">自定义报表</span>
+          <span class="tab-link">科主任决策</span>
         </router-link>
 
         <router-link tag="div"
@@ -31,21 +31,21 @@
                      to="/dataAnalysis"
                      active-class="active"
         >
-          <span class="tab-link">数据分析</span>
+          <span class="tab-link">质量指标</span>
         </router-link>
 
-        <router-link tag="div"
-                     class="tab-item"
-                     to="/basicSettings"
-                     active-class="active"
-        >
-          <span class="tab-link">基础设置</span>
-        </router-link>
+        <!--<router-link tag="div"-->
+                     <!--class="tab-item"-->
+                     <!--to="/basicSettings"-->
+                     <!--active-class="active"-->
+        <!--&gt;-->
+          <!--<span class="tab-link">基础设置</span>-->
+        <!--</router-link>-->
       </div>
-      <div class="user-content">
-        <div class="switch floatL"></div>
-        <div class="user floatR"></div>
-      </div>
+      <!--<div class="user-content">-->
+        <!--<div class="switch floatL"></div>-->
+        <!--<div class="user floatR"></div>-->
+      <!--</div>-->
     </div>
   </div>
 
@@ -79,7 +79,7 @@
     font-size: 18px;
   }
   .header-content{
-    width: 1024px;
+    width: 80%;
     margin: 0 auto;
     overflow: hidden;
   }
@@ -123,6 +123,7 @@
     padding: 0 30px 0 30px;
     margin-right: 30px;
     text-align: center;
+    color: #626D75;
   }
 
   .tab-link {
@@ -132,7 +133,8 @@
 
   .active {
     /*border-bottom: 2px solid palevioletpink;*/
-    background: #5AAEFC;
+    /*background: #5AAEFC;*/
+    color: #F5F6F6;
   }
   .switch{
     width: 17px;

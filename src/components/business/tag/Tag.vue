@@ -79,10 +79,12 @@
   }
 
   .tag-content {
-    width: 1024px;
+    width: 80%;
     height: 45px;
     margin: 0 auto;
     line-height: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
 </style>
