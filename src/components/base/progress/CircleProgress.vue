@@ -1,15 +1,12 @@
 <template>
-
-<div class="circle">
-    <div class="circlescore">
-      <Countup :end="80" :duration="3" :options="{useEasing : true, useGrouping : true, separator : ',', decimal : '.', prefix : '', suffix : ''}"></Countup>
-      <span>分</span>
-    </div>
-    <div v-for="n in 50" class="avatar" ref="myCircle" :style="{transform:'rotate('+ (n-1)*7.2 +'deg)'}"></div>
-</div>
-
+  <div class="circle">
+      <div class="circlescore">
+        <Countup :end="80" :duration="3" :options="{useEasing : true, useGrouping : true, separator : ',', decimal : '.', prefix : '', suffix : ''}"></Countup>
+        <span>分</span>
+      </div>
+      <div v-for="n in 50" class="avatar" ref="myCircle" :style="{transform:'rotate('+ (n-1)*7.2 +'deg)'}"></div>
+  </div>
 </template>
-
 <script>
   import Countup from 'base/countup/Countup.vue'
     export default{
@@ -52,13 +49,13 @@
 
 <style scoped>
   .circle {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     position: relative;
   }
 
   .avatar {
-    top: -5px;
+    top: 8px;
     left: 65px;
     width: 3px;
     height: 9px;
@@ -69,7 +66,7 @@
   }
 
   .circlescore {
-    top: 32px;
+    top: 46px;
     left: 47px;
     position: absolute;
   }

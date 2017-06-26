@@ -9,6 +9,7 @@
 
     <template v-for="(item, index) in data">
       <card
+        :index="index"
         :class="getClassList(index)"
         :title="item.title"
         :list="item.data"></card>
