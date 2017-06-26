@@ -241,7 +241,6 @@
             }]
           }
         ],
-        scoreright: this.$refs.scoreright.width
       }
     },
     created() {
