@@ -171,13 +171,13 @@
   .dot {
     width: 15px;
     height: 2px;
-    background: #E0C1AA;
+    background: #EFEFEF;
     display: inline-block;
     margin: 0 10px;
   }
 
   .active {
-    background: red;
+    background: #E0C1AA;
   }
 
 </style>

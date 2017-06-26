@@ -97,15 +97,15 @@
 
     },
     methods: {
-        getClassList(index) {
+      getClassList(index) {
 
-          let classList = [
-              'margin-top-16'
-          ];
-          classList.push(index % 2 === 0 ? 'floatL' : 'floatR');
-          return classList;
+        let classList = [
+          'margin-top-16'
+        ];
+        classList.push(index % 2 === 0 ? 'floatL' : 'floatR');
+        return classList;
 
-        }
+      }
     },
     components: {
       score,
@@ -118,10 +118,13 @@
 <style scoped>
 
   .custom-content {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
+    position: absolute;
+    top: 95px;
+    bottom: 0;
   }
 
   .switchbox {

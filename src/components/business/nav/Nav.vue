@@ -79,7 +79,7 @@
     font-size: 18px;
   }
   .header-content{
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
     overflow: hidden;
   }

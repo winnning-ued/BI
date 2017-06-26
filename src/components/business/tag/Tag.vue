@@ -79,7 +79,7 @@
   }
 
   .tag-content {
-    width: 80%;
+    width: 100%;
     height: 45px;
     margin: 0 auto;
     line-height: 45px;

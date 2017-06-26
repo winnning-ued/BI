@@ -16,15 +16,20 @@
           </div>
           <div class="fractionbox floatR">
             <div class="fraction">
-              <Countup :end="85" :duration="3"
+              <Countup :end="50" :duration="3"
                        :options="{useEasing : true, useGrouping : true, separator : ',', decimal : '.', prefix : '', suffix : ''}"></Countup>
               <span>分</span>
             </div>
           </div>
+          <div class="scoreboxBottom">
+            这是描述这是描述这是描述这是描述这是描述这是描述这是描述这是描述这是描述这是描述这是描述这是描述这是描述这是描述这是描述
+          </div>
         </div>
       </div>
+
       <div class="barchart">
         <div id="barchart" :style="{width: '320px', height: '125px'}"></div>
+        <!--<ve-histogram :data="chartData" :settings="chartSettings" tooltip-visible legend-visible></ve-histogram>-->
       </div>
     </div>
     <div class="scoremiddle floatL">
@@ -62,15 +67,15 @@
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
           </el-row>
           <el-row :gutter="20">
@@ -79,15 +84,15 @@
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
           </el-row>
           <el-row :gutter="20">
@@ -96,15 +101,15 @@
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
           </el-row>
         </div>
@@ -129,15 +134,15 @@
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
           </el-row>
           <el-row :gutter="20">
@@ -146,15 +151,15 @@
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
           </el-row>
           <el-row :gutter="20">
@@ -163,15 +168,15 @@
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
-              <img src="../../../assets/img/up.png" alt=""  class="trend">
+              <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
           </el-row>
         </div>
@@ -191,44 +196,44 @@
       return {
         sliderData: [
           {
-              data:[{
-                name: '门诊收费总额',
-                value: 200000,
-                total: 400000,
-                trend: 'up'
-              },{
-                name: '门诊收费总额',
-                value: 200000,
-                total: 400000,
-                trend: 'up'
-              },{
-                name: '门诊收费总额',
-                value: 200000,
-                total: 400000,
-                trend: 'up'
-              },{
-                name: '门诊收费总额',
-                value: 200000,
-                total: 400000,
-                trend: 'up'
-              }]
-          },{
-            data:[{
+            data: [{
               name: '门诊收费总额',
               value: 200000,
               total: 400000,
               trend: 'up'
-            },{
+            }, {
               name: '门诊收费总额',
               value: 200000,
               total: 400000,
               trend: 'up'
-            },{
+            }, {
               name: '门诊收费总额',
               value: 200000,
               total: 400000,
               trend: 'up'
-            },{
+            }, {
+              name: '门诊收费总额',
+              value: 200000,
+              total: 400000,
+              trend: 'up'
+            }]
+          }, {
+            data: [{
+              name: '门诊收费总额',
+              value: 200000,
+              total: 400000,
+              trend: 'up'
+            }, {
+              name: '门诊收费总额',
+              value: 200000,
+              total: 400000,
+              trend: 'up'
+            }, {
+              name: '门诊收费总额',
+              value: 200000,
+              total: 400000,
+              trend: 'up'
+            }, {
               name: '门诊收费总额',
               value: 200000,
               total: 400000,
@@ -239,8 +244,30 @@
       }
     },
     created() {
-
-
+      this.chartData = {
+        columns: ['日期', '评分'],
+        rows: [
+          {'日期': '1月1日', '评分': 1523},
+          {'日期': '1月2日', '评分': 1223},
+          {'日期': '1月3日', '评分': 2123},
+          {'日期': '1月4日', '评分': 4123},
+          {'日期': '1月5日', '评分': 3123},
+          {'日期': '1月6日', '评分': 7123}
+        ]
+      }
+      this.chartSettings = {
+        dimension: ['日期'],
+        metrics: ['销售额-1季度', '销售额-2季度', '占比'],
+        axisSite: {
+          right: ['占比']
+        },
+        yAxisType: ['KMB', 'percent'],
+        yAxisName: ['销售额', '占比'],
+        area: true,
+        stack: {
+          '销售额': ['销售额-1季度', '销售额-2季度']
+        }
+      }
     },
     mounted() {
       /*雷达图*/
@@ -322,6 +349,11 @@
         },
         xAxis: {
           type: 'category',
+          axisLine:{
+            lineStyle:{
+              color:'#999999'
+            }
+          },
           data: ['一月', '二月', '三月', '四月', '五月', '六月'],
           axisTick: {
             show: false
@@ -331,6 +363,13 @@
           type: 'value',
           axisTick: {
             show: false
+          },
+          splitLine: {
+            lineStyle: {
+              type: 'dashed',
+              color: '#EDEDED',
+              fontStyle: 'lighter'
+            }
           }
         },
         series: [
@@ -417,12 +456,23 @@
 
   .scorebox {
     width: 72%;
-    height: 60px;
+    height: 120px;
+  }
+
+  .scoreboxBottom {
+    border-top: 1px dashed #EDEDED;
+    font-size: 12px;
+    color: #666666;
+    display: block;
+    float: left;
+    padding-top: 10px;
+    margin-top: 10px;
+    line-height: 23px;
   }
 
   .star {
     width: 35%;
-    height: 85px;
+    height: 50px;
     border-radius: 5px 0 0 5px;
     /*background-color: #1e90ff;*/
   }
@@ -430,21 +480,22 @@
   .starimg {
     width: 30px;
     height: 30px;
-    margin: 26px auto 0;
-    background: url("../../../assets/img/up.png") no-repeat center center;
+    margin: 20px auto 0;
+    /*background: url("../../../assets/img/star.png") no-repeat center center;*/
+    background: pink;
     background-size: 30px 30px;
   }
 
   .fractionbox {
     width: 65%;
-    height: 85px;
+    height: 50px;
     border-radius: 0 5px 5px 0;
     /*background-color: #56acff;*/
   }
 
   .fraction {
     color: #F6282E;
-    margin: 20px auto;
+    margin: 10px auto 0;
     text-align: center;
   }
 
@@ -502,33 +553,42 @@
     font-size: 14px;
     color: #666666;
   }
-  .el-row:first-child{
+
+  .el-row:first-child {
     margin-bottom: 30px;
   }
-  .el-row:last-child{
+
+  .el-row:last-child {
     margin-bottom: 0px;
   }
+
   .el-col {
     border-radius: 4px;
   }
+
   .-dark {
     background: #99a9bf;
   }
+
   . {
     background: #d3dce6;
   }
+
   .-light {
     background: #e5e9f2;
   }
+
   .grid-content {
     border-radius: 4px;
     min-height: 20px;
   }
+
   .row-bg {
     padding: 10px 0;
     background-color: #f9fafc;
   }
-  .trendTitle{
+
+  .trendTitle {
     float: left;
     margin-left: 25px;
   }
