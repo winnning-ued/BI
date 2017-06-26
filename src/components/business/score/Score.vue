@@ -39,8 +39,8 @@
         </div>
       </div>
     </div>
-    <div class="scoreright floatR">
-      <slider :slideItemrWidth="400"
+    <div class="scoreright floatR" ref="scoreright">
+      <slider :slideItemrWidth="600"
               :slideItemrHeight="270"
               :autoPlay="true"
               :interval="4000"
@@ -240,7 +240,8 @@
               trend: 'up'
             }]
           }
-        ]
+        ],
+        scoreright: this.$refs.scoreright.width
       }
     },
     created() {
@@ -349,9 +350,9 @@
         },
         xAxis: {
           type: 'category',
-          axisLine:{
-            lineStyle:{
-              color:'#999999'
+          axisLine: {
+            lineStyle: {
+              color: '#999999'
             }
           },
           data: ['一月', '二月', '三月', '四月', '五月', '六月'],

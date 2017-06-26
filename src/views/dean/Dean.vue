@@ -122,9 +122,6 @@
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
-    position: absolute;
-    top: 95px;
-    bottom: 0;
   }
 
   .switchbox {
