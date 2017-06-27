@@ -28,8 +28,7 @@
       </div>
 
       <div class="barchart">
-        <div id="barchart" :style="{width: '320px', height: '125px'}"></div>
-        <!--<ve-histogram :data="chartData" :settings="chartSettings" tooltip-visible legend-visible></ve-histogram>-->
+        <div id="barchart" :style="{width:'320px',height: '125px'}"></div>
       </div>
     </div>
     <div class="scoremiddle floatL">
@@ -40,10 +39,10 @@
       </div>
     </div>
     <div class="scoreright floatR" ref="scoreright">
-      <slider :slideItemrWidth="600"
-              :slideItemrHeight="270"
+      <slider :slideItemWidth="slideItemWidth"
+              :slideItemHeight="slideItemHeight"
               :autoPlay="true"
-              :interval="4000"
+              :interval="6000"
               :loop="true"
       >
         <div class="test1">
@@ -66,15 +65,15 @@
               <div class="grid-content ">门诊人数</div>
             </el-col>
             <el-col :span="6">
-              <div class="grid-content  trendTitle">486</div>
+              <div class="grid-content  trendTitle">999</div>
               <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
-              <div class="grid-content  trendTitle">486</div>
+              <div class="grid-content  trendTitle">999</div>
               <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
-              <div class="grid-content  trendTitle">486</div>
+              <div class="grid-content  trendTitle">999</div>
               <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
           </el-row>
@@ -83,15 +82,15 @@
               <div class="grid-content ">急诊人数</div>
             </el-col>
             <el-col :span="6">
-              <div class="grid-content  trendTitle">486</div>
+              <div class="grid-content  trendTitle">999</div>
               <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
-              <div class="grid-content  trendTitle">486</div>
+              <div class="grid-content  trendTitle">999</div>
               <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
-              <div class="grid-content  trendTitle">486</div>
+              <div class="grid-content  trendTitle">999</div>
               <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
           </el-row>
@@ -100,15 +99,15 @@
               <div class="grid-content ">住院人数</div>
             </el-col>
             <el-col :span="6">
-              <div class="grid-content  trendTitle">486</div>
+              <div class="grid-content  trendTitle">999</div>
               <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
-              <div class="grid-content  trendTitle">486</div>
+              <div class="grid-content  trendTitle">999</div>
               <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
             <el-col :span="6">
-              <div class="grid-content  trendTitle">486</div>
+              <div class="grid-content  trendTitle">999</div>
               <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
           </el-row>
@@ -176,6 +175,73 @@
             </el-col>
             <el-col :span="6">
               <div class="grid-content  trendTitle">486</div>
+              <img src="../../../assets/img/up.png" alt="" class="trend">
+            </el-col>
+          </el-row>
+        </div>
+        <div class="test1">
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <div class="grid-content ">指标名称</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content ">实际值</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content ">同比下降</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content ">目标值</div>
+            </el-col>
+          </el-row>
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <div class="grid-content ">门诊人数</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">888</div>
+              <img src="../../../assets/img/up.png" alt="" class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">888</div>
+              <img src="../../../assets/img/up.png" alt="" class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">888</div>
+              <img src="../../../assets/img/up.png" alt="" class="trend">
+            </el-col>
+          </el-row>
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <div class="grid-content ">急诊人数</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">888</div>
+              <img src="../../../assets/img/up.png" alt="" class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">888</div>
+              <img src="../../../assets/img/up.png" alt="" class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">888</div>
+              <img src="../../../assets/img/up.png" alt="" class="trend">
+            </el-col>
+          </el-row>
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <div class="grid-content ">住院人数</div>
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">888</div>
+              <img src="../../../assets/img/up.png" alt="" class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">888</div>
+              <img src="../../../assets/img/up.png" alt="" class="trend">
+            </el-col>
+            <el-col :span="6">
+              <div class="grid-content  trendTitle">888</div>
               <img src="../../../assets/img/up.png" alt="" class="trend">
             </el-col>
           </el-row>
@@ -241,33 +307,14 @@
             }]
           }
         ],
+        slideItemWidth: 400,
+        slideItemHeight: 270,
+        barchartWidth: 500,
+        barchartHeight: 125
       }
     },
     created() {
-      this.chartData = {
-        columns: ['日期', '评分'],
-        rows: [
-          {'日期': '1月1日', '评分': 1523},
-          {'日期': '1月2日', '评分': 1223},
-          {'日期': '1月3日', '评分': 2123},
-          {'日期': '1月4日', '评分': 4123},
-          {'日期': '1月5日', '评分': 3123},
-          {'日期': '1月6日', '评分': 7123}
-        ]
-      }
-      this.chartSettings = {
-        dimension: ['日期'],
-        metrics: ['销售额-1季度', '销售额-2季度', '占比'],
-        axisSite: {
-          right: ['占比']
-        },
-        yAxisType: ['KMB', 'percent'],
-        yAxisName: ['销售额', '占比'],
-        area: true,
-        stack: {
-          '销售额': ['销售额-1季度', '销售额-2季度']
-        }
-      }
+
     },
     mounted() {
       /*雷达图*/
@@ -364,9 +411,15 @@
           axisTick: {
             show: false
           },
-          splitLine: {
+          axisLine: {
             lineStyle: {
-              type: 'dashed',
+              color: '#999999'
+            }
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              type: 'solid',
               color: '#EDEDED',
               fontStyle: 'lighter'
             }
@@ -382,8 +435,31 @@
         ]
       };
       barChart.setOption(baroption);
+      //    获取宽度，高度
+      this.$nextTick(function () {
+        window.addEventListener('resize', this._getWidth)
+        window.addEventListener('resize', this._getHeight)
+        this._getWidth()
+        this._getHeight()
+      })
     },
-    methods: {},
+    computed: {
+//      slideItemWidth() {
+//        let _testWidth = this.$refs.scoreright.clientWidth;
+//        return 200 || this.$refs.scoreright.clientWidth
+//      },
+//      slideItemHeight() {
+//        return 270 || this.$refs.scoreright.clientHeight
+//      }
+    },
+    methods: {
+      _getWidth(event){
+        this.slideItemWidth = this.$refs.scoreright.clientWidth;
+      },
+      _getHeight(event){
+        this.slideItemHeight = this.$refs.scoreright.clientHeight;
+      }
+    },
     components: {
       slider,
       Countup

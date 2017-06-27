@@ -33,7 +33,7 @@
             data: [
               {
                 name: '门诊收费总额',
-                value: 200000,
+                value: 2000,
                 total: 400000,
                 trend: 'up'
               },

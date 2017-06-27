@@ -5,7 +5,8 @@
       <slot></slot>
     </div>
     <div class="dots">
-      <span class="dot" v-for="(item,index) in dots" :class="{active:currentPageIndex===index}"
+      <span class="dot" v-for="(item,index) in dots"
+            :class="{active:currentPageIndex===index}"
             @click="clickDot(index)"></span>
     </div>
   </div>
@@ -30,22 +31,26 @@
         type: Number,
         default: 4000
       },
-      slideItemrWidth: {
+      slideItemWidth: {
         type: Number,
-        default: 100,
         required: true
       },
-      slideItemrHeight: {
+      slideItemHeight: {
         type: Number,
-        default: 100,
         required: true
       }
     },
     data: function () {
       return {
         dots: [],
-        currentPageIndex: 0
+        currentPageIndex: 0,
+        slider: null
       };
+    },
+    watch: {
+      slideItemWidth(value) {
+        this._setSliderWidth();
+      }
     },
     created() {
     },
@@ -62,21 +67,21 @@
     },
     methods: {
       _setSliderWidth() {
-        let slideItemrWidth = this.slideItemrWidth;
-        let slideItemrHeight = this.slideItemrHeight;
+        let slideItemWidth = this.slideItemWidth;
+        let slideItemHeight = this.slideItemHeight;
         let sliderWidth = 0;           //sliderGroup的宽度
-        this.$refs.slider.style.width = `${slideItemrWidth}px`;
-        this.$refs.slider.style.height = `${slideItemrHeight}px`;
+        this.$refs.slider.style.width = `${slideItemWidth}px`;
+        this.$refs.slider.style.height = `${slideItemHeight}px`;
         this.sliderGroupDom = this.$refs.sliderGroup.children;
         for (let i = 0; i < this.sliderGroupDom.length; i++) {
           let child = this.sliderGroupDom[i];
           addClass(child, 'slider-item');
-          child.style.width = slideItemrWidth + 'px';
-          child.style.height = slideItemrHeight + 'px';
-          sliderWidth += slideItemrWidth;
+          child.style.width = slideItemWidth + 'px';
+          child.style.height = slideItemHeight + 'px';
+          sliderWidth += slideItemWidth;
         }
         if (this.loop) {
-          sliderWidth += 2 * slideItemrWidth;
+          sliderWidth += 2 * slideItemWidth;
         }
         this.$refs.sliderGroup.style.width = sliderWidth + 'px';
       },
@@ -92,7 +97,12 @@
           click: true
         })
         this.slider.on('scrollEnd', this.resetPlay);
-        this.slider.on('touchend', this.resetPlay);
+        this.slider.on('touchend', () => {
+          if (this.autoPlay) {
+            clearTimeout(this.timer);
+            this._play()
+          }
+        });
       },
       _initdots(){
         this.dots = new Array(this.sliderGroupDom.length)
@@ -118,7 +128,7 @@
         }
       },
       clickDot(index){
-        console.log(index);
+        this.slider.goToPage(index, 0, 0);
         this.currentPageIndex = index
       }
     },
@@ -174,6 +184,10 @@
     background: #EFEFEF;
     display: inline-block;
     margin: 0 10px;
+  }
+
+  .dot:hover{
+    cursor:pointer;
   }
 
   .active {

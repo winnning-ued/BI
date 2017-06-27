@@ -5,7 +5,7 @@
     <div class="w-100 clearfix">
       <CircleProgress class="floatL" :goal="80" :time="3"></CircleProgress>
       <div class="linechart floatR">
-        <div :id="'linechart' + index" :style="{width: '500px', height: '120px'}"></div>
+        <div :id="'linechart' + index" :style="{ height: '120px'}"></div>
       </div>
     </div>
 
@@ -201,6 +201,11 @@
   /*折线图*/
   .linechart{
     width: 70%;
+  }
+  @media screen and (max-width:1024px) {
+    .linechart{
+      width: 70%;
+    }
   }
 </style>
 

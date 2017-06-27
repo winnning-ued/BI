@@ -49,7 +49,7 @@
 
 <style scoped>
   .circle {
-    width: 120px;
+    width: 20%;
     height: 120px;
     position: relative;
   }
